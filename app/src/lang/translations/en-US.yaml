@@ -2156,3 +2156,5 @@ operations:
     flows: Flows
     flow: Flow
     data: Data
+subject_password_request: Password Reset Request
+subject_invite_user: You've been invited

@@ -88,6 +88,7 @@ export default defineComponent({
 					.map((email) => email.trim());
 
 				await api.post('/users/invite', {
+					subject: t('subject_invite_user'),
 					email: emailsParsed,
 					role: roleSelected.value,
 				});

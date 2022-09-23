@@ -46,6 +46,7 @@ export default defineComponent({
 
 			try {
 				await api.post(`/auth/password/request`, {
+					subject: t('subject_password_request'),
 					email: email.value,
 				});
 

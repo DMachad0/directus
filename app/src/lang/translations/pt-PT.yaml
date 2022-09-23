@@ -972,3 +972,5 @@ operations:
     url_placeholder: https://exemplo.com/exemplo
   sleep:
     milliseconds: Milisegundos
+subject_password_request: Pedido para repor palavra passe
+subject_invite_user: Foste convidado
