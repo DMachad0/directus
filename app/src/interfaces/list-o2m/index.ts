@@ -73,6 +73,38 @@ export default defineInterface({
 
 		return [
 			{
+				field: 'sort_field',
+				type: 'string',
+				name: '$t:sort_field',
+				meta: {
+					interface: 'text',
+					width: 'half',
+				},
+			},
+			{
+				field: 'sort_direction',
+				name: '$t:sort_direction',
+				schema: {
+					default_value: 'asc',
+				},
+				meta: {
+					interface: 'select-dropdown',
+					options: {
+						choices: [
+							{
+								text: '$t:sort_asc',
+								value: '',
+							},
+							{
+								text: '$t:sort_desc',
+								value: '-',
+							},
+						],
+					},
+					width: 'half',
+				},
+			},
+			{
 				field: 'layout',
 				name: '$t:layout',
 				schema: {

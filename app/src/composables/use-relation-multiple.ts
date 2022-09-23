@@ -34,7 +34,9 @@ export function useRelationMultiple(
 	value: Ref<Record<string, any> | any[] | undefined>,
 	previewQuery: Ref<RelationQueryMultiple>,
 	relation: Ref<RelationM2A | RelationM2M | RelationO2M | undefined>,
-	itemId: Ref<string | number>
+	itemId: Ref<string | number>,
+	sort_direction: Ref<string>,
+	sort_field: Ref<string>
 ) {
 	const loading = ref(false);
 	const fetchedItems = ref<Record<string, any>[]>([]);
@@ -368,6 +370,7 @@ export function useRelationMultiple(
 						filter,
 						page: previewQuery.value.page,
 						limit: previewQuery.value.limit,
+						sort: sort_direction.value + sort_field.value,
 					},
 				});
 

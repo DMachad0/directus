@@ -231,6 +231,8 @@ const props = withDefaults(
 		enableSearchFilter?: boolean;
 		enableLink?: boolean;
 		limit?: number;
+		sort_direction: string;
+		sort_field: string;
 	}>(),
 	{
 		value: () => [],
@@ -250,7 +252,7 @@ const props = withDefaults(
 
 const emit = defineEmits(['input']);
 const { t } = useI18n();
-const { collection, field, primaryKey } = toRefs(props);
+const { collection, field, primaryKey, sort_direction, sort_field } = toRefs(props);
 const { relationInfo } = useRelationO2M(collection, field);
 const fieldsStore = useFieldsStore();
 
@@ -330,7 +332,7 @@ const {
 	isItemSelected,
 	localDelete,
 	getItemEdits,
-} = useRelationMultiple(value, query, relationInfo, primaryKey);
+} = useRelationMultiple(value, query, relationInfo, primaryKey, sort_direction, sort_field);
 
 const pageCount = computed(() => Math.ceil(totalItemCount.value / limit.value));
 
